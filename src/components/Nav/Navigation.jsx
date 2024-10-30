@@ -5,7 +5,7 @@ import { handleNavBar } from '../../js/nav';
 const Navigation = () => {
     return (
         <nav
-        className="flex items-center justify-between bg-white py-2 px-3 md:mb-4"
+        className="flex items-center justify-between bg-white py-2 px-2 sm:px-10 md:mb-4"
       >
         <div className="flex items-center gap-2">
           <h2 id='webName' className="text-3xl font-bold">
@@ -15,6 +15,7 @@ const Navigation = () => {
   
         <ul
           id="nav-lists-container"
+         
           className="flex flex-col sm:flex-row gap-0 sm:gap-5 items-center absolute sm:static top-[-600px] left-0 py-0 sm:py-4 bg-[#f6f2f2] sm:bg-inherit w-full sm:w-auto transition-['top'] sm:transition-none duration-[1s] -z-10 sm:z-10"
         >
           <li className="text-red-500 font-bold"><a href="#">Home</a></li>

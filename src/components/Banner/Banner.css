@@ -1,0 +1,8 @@
+#bannerSection{
+
+    height: 430px;
+    background-image: linear-gradient(#0b01017a, #0b01017a),
+      url("../../images/banner.jpg");
+    background-size: 100% 100%;
+ 
+}
