@@ -2,6 +2,7 @@
 
 import './App.css'
 import Banner from './components/Banner/Banner'
+import Cook from './components/Cook/Cook'
 import Navigation from './components/Nav/Navigation'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <>
        <Navigation/>
        <Banner/>
+       <Cook/>
       
     </>
   )
