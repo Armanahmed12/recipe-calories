@@ -1,9 +1,24 @@
 // import React from 'react';
 import PropTypes from "prop-types";
+import { handleSettingRecipe } from "../../js/cook";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
 
 const Recipe = ({recipe}) => {
-    console.log(recipe);
-    const {recipe_id, recipe_name, recipe_image, description,ingredients,preparing_time,calories} = recipe;
+  
+    const [isClicked, setIsClicked] = useState(false);
+
+    const { recipe_name, recipe_image, description,ingredients,preparing_time,calories} = recipe;
+    // react Toast message func
+    const notify = () => {
+
+        toast.warn("Already Added!", {
+            position: "top-center"
+          });
+       
+    };
+
     return (
         <div className='border-2 border-solid border-[#1c2b35] rounded-lg flex flex-col'>
         <img className='p-2 rounded-2xl h-[180px]' src={recipe_image} alt="" />
@@ -23,7 +38,8 @@ const Recipe = ({recipe}) => {
                 <p><span><i className="fa-solid fa-fire-flame-simple"></i></span> {calories}</p>
             </div>
         </div>
-        <button  className='bg-[#1c2b35] hover:bg-[#024774] font-semibold text-white w-full py-2 flex justify-center items-center gap-3'>Want to Cook </button>
+        <button onClick={()=> handleSettingRecipe(recipe,notify,isClicked,setIsClicked)} className='bg-[#1c2b35] hover:bg-[#024774] font-semibold text-white w-full py-2 flex justify-center items-center gap-3'>Want to Cook </button>
+        <ToastContainer />
     </div>
     );
 };
